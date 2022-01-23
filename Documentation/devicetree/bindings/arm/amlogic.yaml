@@ -111,6 +111,8 @@ properties:
               - amlogic,p230
               - amlogic,p231
               - libretech,aml-s905d-pc
+              - osmc,vero4k
+              - osmc,vero4k-plus
               - phicomm,n1
               - smartlabs,sml5442tw
               - videostrong,gxl-kii-pro

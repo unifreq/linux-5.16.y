@@ -882,6 +882,8 @@ patternProperties:
     description: Ortus Technology Co., Ltd.
   "^osddisplays,.*":
     description: OSD Displays
+  "^osmc,.*":
+    description: Open Source Media Centre
   "^ouya,.*":
     description: Ouya Inc.
   "^overkiz,.*":
