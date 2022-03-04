@@ -8,6 +8,7 @@
 #include "meson-g12a.dtsi"
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/gpio/meson-g12a-gpio.h>
+#include <dt-bindings/leds/common.h>
 #include <dt-bindings/sound/meson-g12a-tohdmitx.h>
 
 / {
@@ -236,6 +237,64 @@
 
 			codec {
 				sound-dai = <&hdmi_tx>;
+			};
+		};
+	};
+
+	spi {
+		compatible = "spi-gpio";
+		sck-gpios = <&gpio GPIOX_0 GPIO_ACTIVE_HIGH>;
+		mosi-gpios = <&gpio GPIOA_15 GPIO_ACTIVE_HIGH>;
+		cs-gpios = <&gpio_ao GPIOAO_10 GPIO_ACTIVE_LOW>;
+		num-chipselects = <1>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		tm1628: led-controller@0 {
+			compatible = "titanmec,tm1628";
+			reg = <0>;
+			spi-3wire;
+			spi-lsb-first;
+			spi-rx-delay-us = <1>;
+			spi-max-frequency = <500000>;
+			#address-cells = <2>;
+			#size-cells = <0>;
+
+			segment-mapping = /bits/ 8 <4 5 6 1 2 3 7>;
+			grid = /bits/ 8 <4 1 2 3>;
+
+			apps@5,1 {
+				reg = <5 1>;
+				function = "apps";
+			};
+
+			usb@5,2 {
+				reg = <5 2>;
+				function = LED_FUNCTION_USB;
+			};
+			setup@5,3 {
+				reg = <5 3>;
+				function = "setup";
+			};
+
+			card@5,4 {
+				reg = <5 4>;
+				function = "card";
+			};
+
+			colon@5,5 {
+				reg = <5 5>;
+				function = "colon";
+			};
+
+			hdmi@5,6 {
+				reg = <5 6>;
+				function = "hdmi";
+			};
+
+			cvbs@5,7 {
+				reg = <5 7>;
+				function = "cvbs";
 			};
 		};
 	};
