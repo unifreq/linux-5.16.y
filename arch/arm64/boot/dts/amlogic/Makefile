@@ -97,6 +97,8 @@ dtb-$(CONFIG_ARCH_MESON) += meson-sm1-hk1box-vontar-x3.dtb
 dtb-$(CONFIG_ARCH_MESON) += meson-sm1-hk1box-vontar-x3-oc.dtb
 dtb-$(CONFIG_ARCH_MESON) += meson-sm1-ugoos-x3.dtb
 dtb-$(CONFIG_ARCH_MESON) += meson-sm1-ugoos-x3-oc.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-sm1-tx3.dtb
+dtb-$(CONFIG_ARCH_MESON) += meson-sm1-tx3-oc.dtb
 dtb-$(CONFIG_ARCH_MESON) += meson-a1-ad401.dtb
 
 subdir-y += overlays
