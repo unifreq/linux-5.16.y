@@ -167,7 +167,7 @@
 	uart-has-rtscts;
 
 	bluetooth {
-		compatible = "realtek,rtl8822cs-bt";
+		compatible = "brcm,bcm43438-bt";
 		interrupt-parent = <&gpio_intc>;
 		interrupts = <95 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "host-wakeup";
